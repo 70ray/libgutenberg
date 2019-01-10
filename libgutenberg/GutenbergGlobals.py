@@ -119,8 +119,8 @@ def build_nsmap (prefixes = None):
 
     if prefixes is None:
         prefixes = list(NSMAP.keys ())
-    if isinstance (prefixes, str):
-        prefixes = prefixes.split () # pylint: disable=maybe-no-member
+    if isinstance (prefixes, basestring):
+        prefixes = prefixes.split (" ") # pylint: disable=maybe-no-member
 
     ns = {}
     for prefix_ in prefixes:
