@@ -75,7 +75,12 @@ def guess_type (url):
     """ Guess the mimetype of an url. """
 
     ext = url.split ('.')[-1]
-    return E2T[ext.lower ()]
+    ext = ext.lower()
+    if ext in E2T:
+        return E2T[ext]
+    else:
+        print(f"File type {ext} is not supported")
+        raise SystemExit
 
 
 class MediatypesLookup (object):
